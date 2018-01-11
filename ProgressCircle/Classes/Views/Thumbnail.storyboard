@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IHR-JH-qTN">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Thumbnail View Controller-->
+        <scene sceneID="EBe-7a-DbW">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="IHR-JH-qTN" customClass="ThumbnailViewController" customModule="ProgressCircle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I6t-js-Xvj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tqw-YE-UBk" customClass="TransparentView" customModule="ProgressCircle" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWz-aE-zso" customClass="ThumbnailView" customModule="ProgressCircle" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="79" width="240" height="150"/>
+                                        <color key="backgroundColor" red="0.87819940480000003" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="uPw-SB-39O"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CircleProgressBar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESI-Tp-JDT">
+                                        <rect key="frame" x="106" y="177" width="107" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0OF-aB-YSn" customClass="ThumbnailCircleProgressBar" customModule="ProgressCircle" customModuleProvider="target">
+                                        <rect key="frame" x="140" y="114" width="40" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="VvE-9R-Sne"/>
+                                            <constraint firstAttribute="width" constant="40" id="wYJ-lN-YD6"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJj-qK-dqM" customClass="ThumbnailView" customModule="ProgressCircle" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="299" width="240" height="150"/>
+                                        <color key="backgroundColor" red="0.87819940480000003" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="sLF-4Q-XXT"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GradientCircularProgress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1J-hh-jbe">
+                                        <rect key="frame" x="85" y="397" width="150" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vBP-6S-stn" customClass="ThumbnailGradientCircularProgress" customModule="ProgressCircle" customModuleProvider="target">
+                                        <rect key="frame" x="140" y="334" width="40" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="jIA-2y-0Lt"/>
+                                            <constraint firstAttribute="width" constant="40" id="mo5-2X-Wpc"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="0.8771524235" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ESI-Tp-JDT" firstAttribute="centerY" secondItem="Tqw-YE-UBk" secondAttribute="centerY" constant="-90" id="1u1-h8-seM"/>
+                                    <constraint firstItem="rWz-aE-zso" firstAttribute="leading" secondItem="Tqw-YE-UBk" secondAttribute="leading" constant="40" id="E8I-bq-yWC"/>
+                                    <constraint firstAttribute="trailing" secondItem="rWz-aE-zso" secondAttribute="trailing" constant="40" id="PUq-Pn-PYr"/>
+                                    <constraint firstItem="vBP-6S-stn" firstAttribute="centerX" secondItem="Tqw-YE-UBk" secondAttribute="centerX" id="Rd9-dl-mMs"/>
+                                    <constraint firstItem="ESI-Tp-JDT" firstAttribute="centerX" secondItem="Tqw-YE-UBk" secondAttribute="centerX" id="Sqv-bX-sSw"/>
+                                    <constraint firstItem="mJj-qK-dqM" firstAttribute="leading" secondItem="Tqw-YE-UBk" secondAttribute="leading" constant="40" id="Vug-ea-GAQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="mJj-qK-dqM" secondAttribute="trailing" constant="40" id="WUm-bx-MbA"/>
+                                    <constraint firstItem="0OF-aB-YSn" firstAttribute="centerY" secondItem="Tqw-YE-UBk" secondAttribute="centerY" constant="-140" id="gid-5i-h8o"/>
+                                    <constraint firstItem="rWz-aE-zso" firstAttribute="centerY" secondItem="Tqw-YE-UBk" secondAttribute="centerY" constant="-120" id="goa-NX-wHw"/>
+                                    <constraint firstItem="L1J-hh-jbe" firstAttribute="centerY" secondItem="Tqw-YE-UBk" secondAttribute="centerY" constant="130" id="iHu-Kw-0hO"/>
+                                    <constraint firstItem="mJj-qK-dqM" firstAttribute="centerY" secondItem="Tqw-YE-UBk" secondAttribute="centerY" constant="100" id="iUP-d1-I07"/>
+                                    <constraint firstItem="0OF-aB-YSn" firstAttribute="centerX" secondItem="Tqw-YE-UBk" secondAttribute="centerX" id="jPR-hB-DX0"/>
+                                    <constraint firstItem="L1J-hh-jbe" firstAttribute="centerX" secondItem="Tqw-YE-UBk" secondAttribute="centerX" id="lrY-gv-fbu"/>
+                                    <constraint firstItem="vBP-6S-stn" firstAttribute="centerY" secondItem="Tqw-YE-UBk" secondAttribute="centerY" constant="80" id="m5a-h4-bQp"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thumbnail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFT-Zg-5Qo">
+                                <rect key="frame" x="111.5" y="270.5" width="98" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdH-cQ-0Cw" customClass="DefaultButton" customModule="ProgressCircle" customModuleProvider="target">
+                                <rect key="frame" x="59.5" y="514" width="41" height="30"/>
+                                <state key="normal" title="Home"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icb-o5-N6o" customClass="DefaultButton" customModule="ProgressCircle" customModuleProvider="target">
+                                <rect key="frame" x="135.5" y="514" width="49" height="30"/>
+                                <state key="normal" title="Record"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQW-WP-UWW" customClass="DefaultButton" customModule="ProgressCircle" customModuleProvider="target">
+                                <rect key="frame" x="204" y="514" width="72" height="30"/>
+                                <state key="normal" title="Thumbnail"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vve-IX-aDG" firstAttribute="bottom" secondItem="icb-o5-N6o" secondAttribute="bottom" constant="24" id="8ei-XH-IPl"/>
+                            <constraint firstItem="icb-o5-N6o" firstAttribute="centerX" secondItem="I6t-js-Xvj" secondAttribute="centerX" id="CIm-CB-F9D"/>
+                            <constraint firstItem="BFT-Zg-5Qo" firstAttribute="centerX" secondItem="I6t-js-Xvj" secondAttribute="centerX" id="HFd-yh-qKT"/>
+                            <constraint firstItem="Tqw-YE-UBk" firstAttribute="trailing" secondItem="Vve-IX-aDG" secondAttribute="trailing" id="I8i-zb-B32"/>
+                            <constraint firstItem="Vve-IX-aDG" firstAttribute="bottom" secondItem="zdH-cQ-0Cw" secondAttribute="bottom" constant="24" id="iz8-fX-qzr"/>
+                            <constraint firstItem="Vve-IX-aDG" firstAttribute="bottom" secondItem="Tqw-YE-UBk" secondAttribute="bottom" id="l2i-Ue-dK1"/>
+                            <constraint firstItem="OQW-WP-UWW" firstAttribute="centerX" secondItem="I6t-js-Xvj" secondAttribute="centerX" constant="80" id="nsk-W1-r4P"/>
+                            <constraint firstItem="zdH-cQ-0Cw" firstAttribute="centerX" secondItem="I6t-js-Xvj" secondAttribute="centerX" constant="-80" id="oNU-Iy-Of0"/>
+                            <constraint firstItem="BFT-Zg-5Qo" firstAttribute="centerY" secondItem="I6t-js-Xvj" secondAttribute="centerY" id="qMU-dU-fha"/>
+                            <constraint firstItem="Tqw-YE-UBk" firstAttribute="top" secondItem="Vve-IX-aDG" secondAttribute="top" id="qR4-XA-A0l"/>
+                            <constraint firstItem="Tqw-YE-UBk" firstAttribute="leading" secondItem="Vve-IX-aDG" secondAttribute="leading" id="rJE-Oc-gPE"/>
+                            <constraint firstItem="Vve-IX-aDG" firstAttribute="bottom" secondItem="OQW-WP-UWW" secondAttribute="bottom" constant="24" id="sVn-Qy-iB8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Vve-IX-aDG"/>
+                    </view>
+                    <connections>
+                        <outlet property="homeButton" destination="zdH-cQ-0Cw" id="Uoa-Vv-KS0"/>
+                        <outlet property="recordButton" destination="icb-o5-N6o" id="QLY-2k-SJn"/>
+                        <outlet property="thumbnail1ProgressView" destination="0OF-aB-YSn" id="63y-RZ-6rh"/>
+                        <outlet property="thumbnail1View" destination="rWz-aE-zso" id="9iU-LD-RH5"/>
+                        <outlet property="thumbnail2ProgressView" destination="vBP-6S-stn" id="dgV-G1-rqR"/>
+                        <outlet property="thumbnail2View" destination="mJj-qK-dqM" id="RvE-xd-Aj2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ebV-V1-cpl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.875" y="169.01408450704224"/>
+        </scene>
+    </scenes>
+</document>
