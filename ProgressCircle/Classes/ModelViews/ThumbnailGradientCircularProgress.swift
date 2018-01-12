@@ -14,11 +14,6 @@ class ThumbnailGradientCircularProgress: DefaultGradientCircularProgress {
         super.start()
     }
     
-    
-    override func stop() {
-        super.stop()
-    }
-    
 }
 
 struct ThumbnailStyleProperty: StyleProperty {

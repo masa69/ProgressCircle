@@ -19,10 +19,5 @@ class ThumbnailCircleProgressBar: DefaultCircleProgressBar {
         self.duration = duration
         super.start()
     }
-    
-    
-    override func stop() {
-        super.stop()
-    }
 
 }

@@ -2,10 +2,6 @@
 import CircleProgressBar
 
 class RecordCircleProgressBar: DefaultCircleProgressBar {
-    
-    private var isRecording: Bool = false
-    
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -22,15 +18,4 @@ class RecordCircleProgressBar: DefaultCircleProgressBar {
         self.hintViewBackgroundColor = UIColor.clear
         self.hintTextFont = UIFont.systemFont(ofSize: 23.0, weight: .ultraLight)
     }
-    
-    
-    override func start() {
-        super.start()
-    }
-    
-    
-    override func stop() {
-        super.stop()
-    }
-    
 }
