@@ -36,7 +36,14 @@ class ThumbnailViewController: UIViewController {
     
     
     private func initProgress() {
-//        print("start")
+        
+        thumbnail1ProgressView.didFinish = {
+            print("finish 1")
+        }
+        thumbnail2ProgressView.didFinish = {
+            print("finish 2")
+        }
+        
         self.isValidQueue = true
         self.start1()
         self.start2()

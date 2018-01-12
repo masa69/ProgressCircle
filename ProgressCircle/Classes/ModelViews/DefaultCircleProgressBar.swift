@@ -5,7 +5,11 @@ class DefaultCircleProgressBar: CircleProgressBar {
     
     var duration: CGFloat = 0.0
     
-    private var isRecording: Bool = false
+    var didFinish: (() -> Void)?
+    
+    private var isValid: Bool = false
+    
+    private var isFinish: Bool = false
     
     private var promise: Timer?
     
@@ -31,7 +35,8 @@ class DefaultCircleProgressBar: CircleProgressBar {
     
     
     func start() {
-        self.isRecording = true
+        self.isValid = true
+        self.isFinish = false
         if self.promise == nil {
             // 一定時間毎に処理を行う
             self.promise = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.progress(_:)), userInfo: nil, repeats: true)
@@ -43,26 +48,38 @@ class DefaultCircleProgressBar: CircleProgressBar {
         // 処理を止める
         self.promise?.invalidate()
         self.promise = nil
-        self.isRecording = false
+        self.isValid = false
         self.resetProgress()
     }
     
     
-    @objc private func progress(_ timer: Timer) {
-        if self.isRecording {
-            let progress: CGFloat = 0.01 / self.duration
-            if self.progress < 1 {
-//                print(self.progress)
-                self.setProgress(self.progress + progress, animated: false)
-            }
-            return
-        }
-        self.resetProgress()
+    func update(progress: CGFloat) {
+        self.setProgress(progress, animated: false)
     }
     
     
     private func resetProgress() {
-        self.setProgress(0, animated: false)
+        self.update(progress: 0)
+    }
+    
+    
+    // MARK: - Timer
+    
+    @objc private func progress(_ sender: Timer) {
+        if self.isValid {
+            let progress: CGFloat = 0.01 / self.duration
+            if self.progress < 1 {
+                self.update(progress: self.progress + progress)
+                return
+            }
+            if self.isFinish {
+                return
+            }
+            self.didFinish?()
+            self.isFinish = true
+            return
+        }
+        self.resetProgress()
     }
     
 }

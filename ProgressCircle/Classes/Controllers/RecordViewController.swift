@@ -35,6 +35,13 @@ class RecordViewController: UIViewController {
         }
         record1Button.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.onPressingButton1(_:))))
         record2Button.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.onPressingButton2(_:))))
+        
+        record1ProgressView.didFinish = {
+            print("finish 1")
+        }
+        record2ProgressView.didFinish = {
+            print("finish 2")
+        }
     }
     
     
@@ -52,36 +59,18 @@ class RecordViewController: UIViewController {
     }
     
     
-    private func start1() {
-        record1ProgressView.start()
-    }
-    
-    private func start2() {
-        record2ProgressView.start()
-    }
-    
-    
-    private func stop1() {
-        record1ProgressView.stop()
-    }
-    
-    private func stop2() {
-        record2ProgressView.stop()
-    }
-    
-    
     // MARK: - Gesture Recognizer
     
     @objc func onPressingButton1(_ sender: UIButton) {
         switch sender.state.rawValue {
         case 1:// start
             print("pressing start 1")
-            self.start1()
+            record1ProgressView.start()
         case 2:// pressing
             break
         case 3:// end
             print("pressing end 1")
-            self.stop1()
+            record1ProgressView.stop()
         default:
             break
         }
@@ -92,12 +81,12 @@ class RecordViewController: UIViewController {
         switch sender.state.rawValue {
         case 1:// start
             print("pressing start 2")
-            self.start2()
+            record2ProgressView.start()
         case 2:// pressing
             break
         case 3:// end
             print("pressing end 2")
-            self.stop2()
+            record2ProgressView.stop()
         default:
             break
         }
