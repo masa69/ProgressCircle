@@ -9,6 +9,8 @@ class DefaultCircleProgressBar: CircleProgressBar {
     
     private var isValid: Bool = false
     
+    private var isPause: Bool = false
+    
     private var isFinish: Bool = false
     
     private var promise: Timer?
@@ -36,6 +38,7 @@ class DefaultCircleProgressBar: CircleProgressBar {
     
     func start() {
         self.isValid = true
+        self.isPause = false
         self.isFinish = false
         if self.promise == nil {
             // 一定時間毎に処理を行う
@@ -53,6 +56,20 @@ class DefaultCircleProgressBar: CircleProgressBar {
     }
     
     
+    func pause() {
+        self.promise?.invalidate()
+        self.promise = nil
+        self.isPause = true
+    }
+    
+    
+    func resume() {
+        self.promise?.invalidate()
+        self.promise = nil
+        self.start()
+    }
+    
+    
     func update(progress: CGFloat, animated: Bool) {
         self.setProgress(progress, animated: animated)
     }
@@ -66,6 +83,9 @@ class DefaultCircleProgressBar: CircleProgressBar {
     // MARK: - Timer
     
     @objc private func progress(_ sender: Timer) {
+        if self.isPause {
+            return
+        }
         if self.isValid {
             let progress: CGFloat = 0.01 / self.duration
             if self.progress < 1 {
