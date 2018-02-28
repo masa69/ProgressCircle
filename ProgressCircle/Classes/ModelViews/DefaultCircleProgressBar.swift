@@ -53,13 +53,13 @@ class DefaultCircleProgressBar: CircleProgressBar {
     }
     
     
-    func update(progress: CGFloat) {
-        self.setProgress(progress, animated: false)
+    func update(progress: CGFloat, animated: Bool) {
+        self.setProgress(progress, animated: animated)
     }
     
     
     private func resetProgress() {
-        self.update(progress: 0)
+        self.update(progress: 0, animated: false)
     }
     
     
@@ -69,7 +69,7 @@ class DefaultCircleProgressBar: CircleProgressBar {
         if self.isValid {
             let progress: CGFloat = 0.01 / self.duration
             if self.progress < 1 {
-                self.update(progress: self.progress + progress)
+                self.update(progress: self.progress + progress, animated: false)
                 return
             }
             if self.isFinish {
